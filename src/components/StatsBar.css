@@ -1,0 +1,103 @@
+/* Stats Bar Styles */
+.stats-bar-section {
+  background: linear-gradient(180deg, var(--color-bg-alt) 0%, #071E40 100%);
+  border-top: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+  padding: clamp(2.25rem, 4vw, 3.25rem) 0;
+  position: relative;
+  z-index: 2;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
+}
+
+.stats-bar-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+  align-items: center;
+}
+
+.stats-bar-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justifyContent: center;
+  text-align: center;
+  padding: 0 clamp(1rem, 2.5vw, 2.5rem);
+  position: relative;
+  transition: transform var(--transition-normal);
+}
+
+.stats-bar-item:hover {
+  transform: translateY(-2px);
+}
+
+.stats-bar-item:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 10%;
+  height: 80%;
+  width: 1px;
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    var(--color-border) 25%,
+    var(--color-border) 75%,
+    transparent 100%
+  );
+}
+
+.stats-bar-number-row {
+  display: flex;
+  align-items: center;
+  justifyContent: center;
+  gap: clamp(0.75rem, 1.5vw, 1.125rem);
+  margin-bottom: 0.625rem;
+}
+
+.stats-bar-icon-box {
+  display: flex;
+  align-items: center;
+  justifyContent: center;
+  color: var(--color-accent);
+  transition: transform var(--transition-normal);
+}
+
+.stats-bar-item:hover .stats-bar-icon-box {
+  transform: scale(1.12);
+}
+
+.stats-bar-value {
+  font-family: var(--font-heading);
+  font-size: clamp(2.25rem, 3.8vw, 3.25rem);
+  font-weight: 800;
+  color: var(--color-white);
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+
+.stats-bar-label {
+  font-family: var(--font-heading);
+  font-size: clamp(0.8125rem, 1vw, 0.9375rem);
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-accent-soft);
+  margin: 0;
+}
+
+@media (max-width: 820px) {
+  .stats-bar-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .stats-bar-item:not(:last-child)::after {
+    display: none;
+  }
+
+  .stats-bar-item:not(:last-child) {
+    border-bottom: 1px solid var(--color-border);
+    padding-bottom: 2rem;
+  }
+}

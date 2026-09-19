@@ -1,0 +1,322 @@
+/* ==========================================================================
+   ABOUT US PAGE - COMPACT MODERN DARK TECH MANUFACTURING DESIGN
+   ========================================================================== */
+
+.about-page {
+  background-color: var(--color-bg-primary);
+  color: var(--color-text-main);
+  overflow-x: hidden;
+}
+
+/* --------------------------------------------------------------------------
+   1. HERO SECTION
+   -------------------------------------------------------------------------- */
+.about-hero-section {
+  position: relative;
+  padding: clamp(2.25rem, 3.5vw, 3.25rem) 0 clamp(1.25rem, 2vw, 1.75rem);
+  background: radial-gradient(circle at 50% 20%, rgba(18, 59, 112, 0.45) 0%, rgba(7, 21, 37, 0.85) 65%, var(--color-bg-primary) 100%),
+              linear-gradient(180deg, #040E1A 0%, var(--color-bg-primary) 100%);
+  border-bottom: 1px solid rgba(35, 59, 92, 0.5);
+  overflow: hidden;
+}
+
+.about-hero-section::before {
+  content: '';
+  position: absolute;
+  top: -120px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 600px;
+  height: 350px;
+  background: radial-gradient(ellipse at center, rgba(157, 228, 0, 0.08) 0%, rgba(56, 189, 248, 0.12) 40%, transparent 70%);
+  pointer-events: none;
+  filter: blur(50px);
+  z-index: 1;
+}
+
+.about-hero-container {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  max-width: 840px;
+  margin: 0 auto;
+}
+
+.about-hero-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.35rem 1rem;
+  border-radius: var(--radius-full);
+  background: rgba(157, 228, 0, 0.08);
+  border: 1px solid rgba(157, 228, 0, 0.35);
+  color: var(--color-accent);
+  font-family: var(--font-heading);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 0.85rem;
+  box-shadow: 0 0 16px rgba(157, 228, 0, 0.12);
+}
+
+.about-hero-eyebrow-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: var(--color-accent);
+  box-shadow: 0 0 8px var(--color-accent);
+  animation: pulseRadar 2s infinite ease-in-out;
+}
+
+@keyframes pulseRadar {
+  0% {
+    transform: scale(0.9);
+    box-shadow: 0 0 0 0 rgba(157, 228, 0, 0.7);
+  }
+  70% {
+    transform: scale(1.1);
+    box-shadow: 0 0 0 6px rgba(157, 228, 0, 0);
+  }
+  100% {
+    transform: scale(0.9);
+    box-shadow: 0 0 0 0 rgba(157, 228, 0, 0);
+  }
+}
+
+.about-hero-title {
+  font-size: clamp(2rem, 3.6vw, 2.9rem);
+  font-weight: 800;
+  line-height: 1.15;
+  color: var(--color-heading);
+  letter-spacing: -0.025em;
+  margin-bottom: 0.85rem;
+}
+
+.about-hero-subtitle {
+  font-size: clamp(0.95rem, 1.2vw, 1.06rem);
+  line-height: 1.65;
+  color: var(--color-text-main);
+  max-width: 680px;
+  margin: 0 auto;
+}
+
+/* --------------------------------------------------------------------------
+   2. WHO WE ARE SECTION (COMPACT PROFILE CARD)
+   -------------------------------------------------------------------------- */
+.about-who-section {
+  padding: clamp(1.5rem, 2.5vw, 2.25rem) 0;
+  position: relative;
+  background-color: var(--color-bg-primary);
+}
+
+.about-who-card {
+  max-width: 840px;
+  margin: 0 auto;
+  text-align: center;
+  background: rgba(10, 29, 53, 0.65);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(35, 75, 135, 0.45);
+  border-radius: 16px;
+  padding: clamp(1.35rem, 2.5vw, 1.85rem) clamp(1.25rem, 3vw, 2.25rem);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35), 0 0 20px rgba(18, 59, 112, 0.15);
+  position: relative;
+  overflow: hidden;
+}
+
+.about-who-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 20%;
+  right: 20%;
+  height: 1.5px;
+  background: linear-gradient(90deg, transparent, var(--color-accent), rgba(56, 189, 248, 0.7), transparent);
+}
+
+.about-who-title {
+  font-size: clamp(1.5rem, 2.2vw, 1.95rem);
+  font-weight: 800;
+  color: var(--color-heading);
+  margin-bottom: 0.85rem;
+  letter-spacing: -0.02em;
+}
+
+.about-narrative-box {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.about-narrative-lead {
+  font-size: clamp(0.98rem, 1.15vw, 1.08rem);
+  line-height: 1.65;
+  color: #FFFFFF;
+  margin: 0;
+}
+
+.about-narrative-p {
+  font-size: clamp(0.88rem, 1.05vw, 0.96rem);
+  line-height: 1.6;
+  color: var(--color-text-main);
+  margin: 0;
+}
+
+.about-who-badges {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem 0.65rem;
+  margin-top: 1.15rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(35, 75, 135, 0.35);
+}
+
+.about-who-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-family: var(--font-heading);
+  font-size: 0.76rem;
+  font-weight: 600;
+  color: #C8FF55;
+  background: rgba(157, 228, 0, 0.08);
+  border: 1px solid rgba(157, 228, 0, 0.25);
+  border-radius: var(--radius-full);
+  padding: 0.25rem 0.75rem;
+  letter-spacing: 0.02em;
+}
+
+.about-badge-icon {
+  color: var(--color-accent);
+  flex-shrink: 0;
+}
+
+/* --------------------------------------------------------------------------
+   3. MISSION & VISION SECTION (COMPACT GLASS CARDS)
+   -------------------------------------------------------------------------- */
+.about-mission-section {
+  padding: clamp(1.5rem, 2.5vw, 2.25rem) 0 clamp(2.25rem, 3.5vw, 3.25rem);
+  background: linear-gradient(180deg, var(--color-bg-primary) 0%, #071E40 50%, var(--color-bg-primary) 100%);
+  border-top: 1px solid rgba(35, 59, 92, 0.5);
+  position: relative;
+}
+
+.about-mission-header {
+  text-align: center;
+  max-width: 680px;
+  margin: 0 auto 1.25rem;
+}
+
+.about-mission-title {
+  font-size: clamp(1.5rem, 2.2vw, 2rem);
+  font-weight: 800;
+  color: var(--color-heading);
+  letter-spacing: -0.02em;
+  margin: 0;
+}
+
+.about-mission-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.25rem;
+  max-width: 880px;
+  margin: 0 auto;
+}
+
+.about-glass-card {
+  background: rgba(10, 29, 53, 0.7);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(35, 75, 135, 0.4);
+  border-radius: 14px;
+  padding: 1.35rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  transition: all var(--transition-normal);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
+  overflow: hidden;
+}
+
+.about-glass-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--color-border), transparent);
+  transition: background var(--transition-normal);
+}
+
+.about-glass-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(56, 189, 248, 0.5);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.5), 0 0 20px rgba(18, 59, 112, 0.3);
+}
+
+.about-glass-card:hover::before {
+  background: linear-gradient(90deg, transparent, var(--color-accent), transparent);
+}
+
+.about-glass-icon-box {
+  width: 42px;
+  height: 42px;
+  border-radius: 10px;
+  background: rgba(157, 228, 0, 0.1);
+  border: 1px solid rgba(157, 228, 0, 0.3);
+  color: var(--color-accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0.75rem;
+  box-shadow: 0 0 16px rgba(157, 228, 0, 0.15);
+}
+
+.about-glass-icon-blue {
+  background: rgba(56, 189, 248, 0.1);
+  border-color: rgba(56, 189, 248, 0.35);
+  color: #38BDF8;
+  box-shadow: 0 0 16px rgba(56, 189, 248, 0.15);
+}
+
+.about-card-tag {
+  font-family: var(--font-heading);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  margin-bottom: 0.25rem;
+}
+
+.about-card-title {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--color-heading);
+  margin-bottom: 0.45rem;
+}
+
+.about-card-desc {
+  font-size: 0.88rem;
+  line-height: 1.6;
+  color: var(--color-text-main);
+  flex-grow: 1;
+  margin: 0;
+}
+
+/* --------------------------------------------------------------------------
+   RESPONSIVE BREAKPOINTS
+   -------------------------------------------------------------------------- */
+@media (max-width: 860px) {
+  .about-mission-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .about-who-card {
+    padding: 1.25rem 1rem;
+  }
+}
