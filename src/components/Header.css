@@ -37,6 +37,8 @@
   gap: 0.75rem;
   text-decoration: none;
   font-family: var(--font-heading);
+  min-width: 0;
+  flex-shrink: 0;
 }
 
 .brand-outline-icon {
@@ -48,6 +50,7 @@
 .brand-text {
   display: flex;
   flex-direction: column;
+  min-width: 0;
 }
 
 .brand-title {
@@ -56,6 +59,7 @@
   color: #FFFFFF;
   letter-spacing: -0.01em;
   line-height: 1.1;
+  white-space: nowrap;
 }
 
 .brand-subtitle {
@@ -63,6 +67,7 @@
   font-weight: 500;
   color: #8F9CAE;
   letter-spacing: 0.04em;
+  white-space: nowrap;
 }
 
 /* Desktop Navigation */
@@ -125,6 +130,8 @@
   cursor: pointer;
   transition: all var(--transition-fast);
   box-shadow: 0 4px 16px rgba(157, 228, 0, 0.35);
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 
 .btn-quote-pill:hover {
@@ -154,6 +161,7 @@
   color: var(--color-heading);
   cursor: pointer;
   transition: all var(--transition-fast);
+  flex-shrink: 0;
 }
 
 .menu-toggle-btn:hover {
@@ -164,19 +172,22 @@
 
 /* Mobile Drawer */
 .mobile-nav-backdrop {
-  display: none;
   position: fixed;
   inset: 0;
   background-color: rgba(4, 14, 26, 0.8);
   backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
   z-index: 1001;
   opacity: 0;
-  transition: opacity var(--transition-normal);
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity var(--transition-normal), visibility var(--transition-normal);
 }
 
 .mobile-nav-backdrop.open {
-  display: block;
   opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
 }
 
 .mobile-nav-drawer {
@@ -209,6 +220,19 @@
   padding-bottom: 1.25rem;
   border-bottom: 1px solid var(--color-border-dark);
   margin-bottom: 1.5rem;
+}
+
+.brand-icon-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border-radius: var(--radius-sm);
+  background: rgba(157, 228, 0, 0.12);
+  color: var(--color-accent);
+  border: 1px solid rgba(157, 228, 0, 0.25);
+  flex-shrink: 0;
 }
 
 .mobile-nav-links {
@@ -251,14 +275,66 @@
   gap: 0.5rem;
 }
 
+/* Tablet & Mobile Breakpoints */
 @media (max-width: 992px) {
-
   .desktop-nav,
+  .nav-cta-container .btn-quote-pill,
   .nav-cta-container .btn {
-    display: none;
+    display: none !important;
   }
 
   .menu-toggle-btn {
     display: flex;
+  }
+}
+
+@media (max-width: 768px) {
+  .header-floating-wrapper {
+    top: 8px;
+  }
+
+  .header-glass-pill {
+    padding: 0.55rem 1rem;
+    border-radius: 16px;
+  }
+
+  .brand-logo {
+    gap: 0.6rem;
+  }
+
+  .brand-title {
+    font-size: 1.05rem;
+  }
+
+  .brand-subtitle {
+    font-size: 0.625rem;
+  }
+
+  .brand-outline-icon {
+    width: 24px;
+    height: 24px;
+  }
+
+  .menu-toggle-btn {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+@media (max-width: 400px) {
+  .header-glass-pill {
+    padding: 0.45rem 0.75rem;
+  }
+
+  .brand-logo {
+    gap: 0.5rem;
+  }
+
+  .brand-title {
+    font-size: 0.95rem;
+  }
+
+  .brand-subtitle {
+    font-size: 0.58rem;
   }
 }
