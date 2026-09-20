@@ -10,16 +10,16 @@ export const companyConfig = {
   address: "Sivakasi",
   pinCode: "626189",
   country: "India",
-  phone: "+91 98765 43210",
-  phoneCallable: "tel:+919876543210",
-  email: "info@vippublications.com",
-  emailCallable: "mailto:info@vippublications.com",
+  phone: "+91 9843274613",
+  phoneCallable: "tel:+919843274613",
+  email: "vippublishers1971@gmail.com",
+  emailCallable: "mailto:vippublishers1971@gmail.com",
   businessHours: {
     days: "Monday – Saturday",
     hours: "9:00 AM – 7:00 PM",
     sunday: "Closed / By Appointment for Bulk Procurement"
   },
-  
+
   // Contact details for forms and display
   placeholders: {
     phone: "+91 98765 43210",
@@ -31,18 +31,18 @@ export const companyConfig = {
   stats: {
     enabled: true,
     items: [
-      { 
-        value: "20+", 
+      {
+        value: "20+",
         label: "YEARS OF SERVICE",
         icon: "award"
       },
-      { 
-        value: "10 Lakh+", 
+      {
+        value: "10 Lakh+",
         label: "FINISHED PRODUCTS",
         icon: "package"
       },
-      { 
-        value: "5,000+", 
+      {
+        value: "5,000+",
         label: "SATISFIED CUSTOMERS",
         icon: "users"
       }
